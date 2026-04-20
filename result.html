@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Diagnosis Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="main-container">
+    <div class="card">
+
+        <h1 class="title">🧠 AI Diagnosis Result</h1>
+
+        <img src="{{ image_path }}" class="preview">
+
+        <h2 class="result-text">{{ result }}</h2>
+
+        <div class="progress-bar">
+            <div class="progress" style="width: {{ confidence }}%;">
+                {{ confidence }}%
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <canvas id="confidenceChart" style="margin-top:20px;"></canvas>
+
+        <div class="assistant-box">
+            <h3>🤖 AI Personal Assistant</h3>
+            <p>
+                Based on your result, I recommend proper scalp care,
+                hydration, and dermatologist consultation if symptoms persist.
+            </p>
+        </div>
+
+        <div class="button-group">
+            <a href="/" class="btn neon-btn">🔄 Try Another</a>
+            <a href="/download-report" class="btn glow-btn">📄 Download Report</a>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    var confidenceValue = {{ confidence | default(0) }};
+
+    var ctx = document.getElementById('confidenceChart');
+
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Confidence'],
+                datasets: [{
+                    label: 'AI Accuracy (%)',
+                    data: [confidenceValue]
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

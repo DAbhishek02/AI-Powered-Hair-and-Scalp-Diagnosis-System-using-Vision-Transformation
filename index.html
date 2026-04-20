@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hair & Scalp AI Diagnosis</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="main-container floating">
+
+    <div class="card">
+        <h1 class="title">AI Hair & Scalp Diagnosis</h1>
+        <p class="subtitle">Upload an image and let AI analyze your scalp health</p>
+
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <input type="file" name="image" required class="file-input">
+            <button class="btn neon-btn">Analyze with AI</button>
+        </form>
+
+        <!-- AI Assistant -->
+        <div class="assistant-box">
+            <h3>🤖 AI Assistant</h3>
+
+            <div id="voice-output" class="voice-box">
+                Click microphone and speak...
+            </div>
+
+            <button onclick="startVoice()" class="btn glow-btn">
+                🎤 Talk to AI
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
