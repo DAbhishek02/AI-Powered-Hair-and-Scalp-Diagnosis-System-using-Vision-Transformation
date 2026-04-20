@@ -1,0 +1,30 @@
+AI-Powered Hair and Scalp Diagnosis System (AI-HSDS)
+📋 OverviewThe AI-Powered Hair and Scalp Diagnosis System (AI-HSDS) is a deep learning-based diagnostic platform designed for rapid, objective, and personalized scalp health assessment. Developed by a team of B.Tech Artificial Intelligence students at Vidya Jyothi Institute of Technology, this system addresses the subjectivity and time constraints of traditional trichological examinations.
+🚀 Key Features
+Multi-Class Diagnosis: Automatically detects and classifies up to 14 distinct conditions, including Alopecia Areata, Seborrheic Dermatitis, Folliculitis, and Dandruff.
+Vision Transformer (ViT) Core: Utilizes a sophisticated ViT architecture to capture both local textures and global spatial dependencies across microscopic scalp images.
+Lifestyle Integration: Correlates diagnosed conditions with user-reported environmental factors (air quality, sun exposure) and stress levels.
+Personalized Recommendations: Generates hyper-personalized treatment strategies, mapping diagnosed issues to specific nutritional advice and therapeutic solutions.
+Data Security: Implements LSB-based Steganography to securely embed diagnostic results directly into scalp images for privacy-preserving data transmission.
+🛠️ Technical Stack
+Frameworks: TensorFlow 2.19.0, Keras 3.10.0
+Architectures: Vision Transformer (ViT), 
+MobileNetV2Preprocessing: OpenCV, PIL,
+CLAHE (Contrast Limited Adaptive Histogram Equalization)
+Interface: Gradio for real-time web-based deployment
+Environment: Python 3.9+, NVIDIA CUDA for GPU acceleration
+📊 System Architecture
+The system follows a modular five-phase pipeline:
+Data Acquisition: Loading high-resolution or dermoscopic images.
+Preprocessing: Resizing (224x224), CLAHE enhancement, and normalization.
+ViT Inference Engine: Patch partitioning and global self-attention processing.
+Classification: MLP head and Softmax logic for probability scoring.
+User Advisory: Interactive dashboard providing diagnosis and care insights.
+📈 Results
+Performance: Achieved high diagnostic accuracy (evaluated at >84% in conclusion) with a lightweight model size of approximately 10.2 MB.
+Convergence: Demonstrated stable training and validation curves using the Adam optimizer and early stopping techniques.
+Explainability: Utilizes attention-based visualizations to highlight specific scalp regions influencing the AI's prediction.
+👥 Contributors
+Team: P. Vaishnavi, D. Abhishek, Y. Navya, A. 
+SanthoshSupervision: Mrs. K. Santhi Priya (Asst. Prof, Dept. of AI, VJIT)
+Disclaimer: This system is intended as an AI-assisted screening tool and should not replace professional dermatological consultation.
